@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShitanWidgets</title>
+  <title>Shitan Widgets</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <%= nav_bar :static => :top %>
+<div class="row">
+    <div class="offset4 span4">
+        <%= yield %>
+    </div>
+</div>
 
-<%= yield %>
 
 </body>
 </html>
