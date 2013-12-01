@@ -1,0 +1,28 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh_TW:
+  missive_filter:
+    titles: "公文搜尋"
+    form_search:
+
+  activerecord:
+    models:
+      missive: "公文"
+    attributes:
+      missive:
+        accept_date: "收文日期"
+        doc_type: "種類"
+        initial: "字"
+        reference_no: "文號"
+        subject: "主旨"
+
+# General pattern
+  helpers:
+    submit:
+      # for create
+      create:
+      # for edit
+      update:
+      #
+      submit: "提交"
