@@ -1,4 +1,6 @@
 ShitanWidgets::Application.routes.draw do
+  match '/search_missive/' => 'search_missive#index'
+  match '/search_missive/search' => 'search_missive#search'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

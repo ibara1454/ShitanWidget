@@ -1,4 +1,19 @@
-<%= form_tag do |f| %>
-<% end %>
+<form class="form-inline well">
+    <label>Label name</label>
+    <div class="input">
+        <div class="input-prepend">
+            <%= dropdown_button('Action ', :list => ['first', 'second', 'third']) %>
+        </div>
+        <input class="span6" type="text" placeholder="Type somthing...">
+        <%= button_tag raw('&times;'), :class => 'close' %>
+    </div>
 
-<%= button_tag %>
+    <input type="text" class="input-small" placeholder="Type somthing...">
+    <button class="btn" type="submit">button</button>
+
+</form>
+
+<%= form_for @obj, url: {action: "search"}, :builder => BootstrapFormBulder, :remote => true do |f| %>
+    <%= f.datepicker :date %>
+    <%= f.submit %>
+<% end %>
