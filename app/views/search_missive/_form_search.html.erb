@@ -1,19 +1,34 @@
-<form class="form-inline well">
-    <label>Label name</label>
-    <div class="input">
-        <div class="input-prepend">
-            <%= dropdown_button('Action ', :list => ['first', 'second', 'third']) %>
+<%= button_tag raw('&times;'), :class => 'close' %>
+
+
+<%= form_for @missive_filter, :url => {:action => "search"}, :html => {:class => "well form-horizontal", :role => "form"}, :builder => BootstrapFormBulder do |f| %>
+    <%= field_set_tag "Search Missive" do %>
+        <div class="form-group">
+            <%= f.label :date %>
+            <%= f.datepicker :date_begin %>
+            <span class="help-inline">Begin</span>
+            <%= f.datepicker :date_end %>
+            <span class="help-inline">End</span>
         </div>
-        <input class="span6" type="text" placeholder="Type somthing...">
-        <%= button_tag raw('&times;'), :class => 'close' %>
-    </div>
-
-    <input type="text" class="input-small" placeholder="Type somthing...">
-    <button class="btn" type="submit">button</button>
-
-</form>
-
-<%= form_for @obj, url: {action: "search"}, :builder => BootstrapFormBulder, :remote => true do |f| %>
-    <%= f.datepicker :date %>
-    <%= f.submit %>
+        <div class="form-group">
+            <%= f.label :doc_type %>
+            <%= f.text_field :doc_type, :class => "input-block-level" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :agency %>
+            <%= f.text_field :agency, :class => "input-block-level" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :reference_no %>
+            <%= f.text_field :reference_no, :class => "input-block-level" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :subject %>
+            <%= f.text_field :subject, :class => "input-block-level" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :submit %>
+            <%= f.submit %>
+        </div>
+    <% end %>
 <% end %>

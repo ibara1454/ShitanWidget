@@ -7,6 +7,7 @@
 $ ->
   $('input.datepicker').datepicker
     format: "yyyy/mm/dd",
-    language: "zh-TW",
+    # 動的にI18n.localeを決める
+    language: "<%= I18n.locale.to_s %>",
     autoclose: true,
     todayHighlight: true

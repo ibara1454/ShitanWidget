@@ -23,17 +23,6 @@ end
 
 class BootstrapFormBulder < ActionView::Helpers::FormBuilder
   def datepicker(method, options = {}, html_options = {})
-    script = <<-EOF
-    $(function() {
-      var year = $("##{@object_name}_#{method}_1i")
-      var month = $("##{@object_name}_#{method}_2i")
-      var date = $("##{@object_name}_#{method}_3i")
-      $("input.datepicker").datepicker()
-        .on("changeDate", function(e) {
-
-        })
-    })
-    EOF
     @template.text_field(@object_name, method, {:class => "datepicker", :type => "text"})
   end
 
@@ -44,17 +33,3 @@ class BootstrapFormBulder < ActionView::Helpers::FormBuilder
     super(*args)
   end
 end
-
-
-# <div class="btn-group">
-#   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-#     Action <span class="caret"></span>
-#   </button>
-#   <ul class="dropdown-menu" role="menu">
-#     <li><a href="#">Action</a></li>
-#     <li><a href="#">Another action</a></li>
-#     <li><a href="#">Something else here</a></li>
-#     <li class="divider"></li>
-#     <li><a href="#">Separated link</a></li>
-#   </ul>
-# </div>

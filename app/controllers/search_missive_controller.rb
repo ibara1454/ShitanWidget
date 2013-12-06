@@ -1,12 +1,12 @@
 class SearchMissiveController < ApplicationController
 
   def index
-    @obj = MissiveFilter.new
+    @missive_filter = MissiveFilter.new
   end
 
   def search
-    #@obj = MissiveFilter.new(params[:obj])
-    #render
+    @missive_filter = MissiveFilter.new(params[:missive_filter])
+    render 'search_missive/index'
   end
 
 end
