@@ -2,10 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 zh-TW:
-  missive_filter:
-    titles: "公文搜尋"
-    form_search:
-
+  # モデルは全て activerecord 以下に記述する。
   activerecord:
     models:
       missive: "公文"
@@ -16,13 +13,41 @@ zh-TW:
         initial: "字"
         reference_no: "文號"
         subject: "主旨"
+    errors:
+      models:
+        missive:
 
-# General pattern
+  activemodel:
+    models:
+      missive_filter: "公文搜尋器"
+    attributes:
+      missive_filter:
+        date: "日期"
+        agency: "發文機關"
+        accept_date: "收文日期"
+        doc_type: "種類"
+        initial: "字"
+        reference_no: "文號"
+        subject: "主旨"
+
+# ヘルパー関数はhelpersを起点にする。
+# ヘルパー関数内で tメソッドを使用すると、呼び出し元のビューに基づいたパスが呼び出される。
+# 例えばusersのshowから呼ばれたヘルパー関数内で t('.hoge') を実行した場合 users.show.hoge が参照される。
+# 呼び出し元によって文言を変えたい場合はビュー側に記述する。(そんなことあるかわからないけど。)
   helpers:
     submit:
-      # for create
-      create:
-      # for edit
-      update:
-      #
-      submit: "提交"
+      missive_filter:
+        create: "提交"
+
+# ビューはモデル名の複数形を起点にし、ビュー名毎に記述する。
+# 対応するビューの中ではツリーを省略できる。<%= t '.title' %>
+  search_missive:
+    form_search:
+      title: "公文搜尋"
+      date:
+        begin: "起"
+        end: "止"
+      fuzzy_match: "模糊比對"
+
+  # グローバルな感じのエラーはerrorsを起点にする。
+  errors:

@@ -1,1 +1,11 @@
-<%= render(:partial => 'form_search', :object => @missive_filter) %>
+<div class="container">
+    <div class="row">
+        <div class="offset2 span7">
+            <%= render(:partial => 'form_search', :object => { :missive_filter => @missive_filter, :doc_type => @doc_type}) %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset1 span10" id="result">
+        </div>
+    </div>
+</div>
