@@ -5,9 +5,9 @@ zh-TW:
   # モデルは全て activerecord 以下に記述する。
   activerecord:
     models:
-      missive: "公文"
+      search_missive/missive: "公文"
     attributes:
-      missive:
+      search_missive/missive:
         accept_date: "收文日期"
         doc_type: "種類"
         initial: "字"
@@ -19,9 +19,9 @@ zh-TW:
 
   activemodel:
     models:
-      missive_filter: "公文搜尋器"
+      search_missive/missive_filter: "公文搜尋器"
     attributes:
-      missive_filter:
+      search_missive/missive_filter:
         date: "日期"
         agency: "發文機關"
         accept_date: "收文日期"
@@ -36,7 +36,7 @@ zh-TW:
 # 呼び出し元によって文言を変えたい場合はビュー側に記述する。(そんなことあるかわからないけど。)
   helpers:
     submit:
-      missive_filter:
+      search_missive_missive_filter:
         create: "提交"
 
 # ビューはモデル名の複数形を起点にし、ビュー名毎に記述する。

@@ -6,8 +6,9 @@ class SearchMissiveController < ApplicationController
   end
 
   def search
-    @missive_filter = SearchMissive::MissiveFilter.new(params[:missive_filter])
-    render 'search_missive/index'
+    conditions = params[:search_missive_missive_filter]
+    @missive_filter = SearchMissive::MissiveFilter.new(conditions)
+    @result = @missive_filter.filter_out.page(params[:page])
   end
 
 end

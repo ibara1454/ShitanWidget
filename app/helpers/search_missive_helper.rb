@@ -23,7 +23,7 @@ end
 
 class BootstrapFormBulder < ActionView::Helpers::FormBuilder
   def datepicker(method, options = {}, html_options = {})
-    @template.text_field(@object_name, method, {:class => "datepicker", :type => "text", :placeholder => "yyyy/mm/dd"})
+    @template.text_field(@object_name, method, {:class => "datepicker", :type => "text", :placeholder => "yyyy-mm-dd"})
   end
 
   def submit(*args)
