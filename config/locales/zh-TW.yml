@@ -10,9 +10,12 @@ zh-TW:
       search_missive/missive:
         accept_date: "收文日期"
         doc_type: "種類"
+        agency: "發文單位"
         initial: "字"
         reference_no: "文號"
         subject: "主旨"
+        document: "公文"
+        attachment: "附件"
     errors:
       models:
         missive:
@@ -23,9 +26,9 @@ zh-TW:
     attributes:
       search_missive/missive_filter:
         date: "日期"
-        agency: "發文機關"
+        agency: "發文單位"
         accept_date: "收文日期"
-        doc_type: "種類"
+        doc_type: "文件種類"
         initial: "字"
         reference_no: "文號"
         subject: "主旨"
@@ -48,6 +51,18 @@ zh-TW:
         begin: "起"
         end: "止"
       fuzzy_match: "模糊比對"
+
+    ajax_result:
+      count_title: "此次搜尋共有%{count}筆資料"
+
+# kaminari用
+  views:
+    pagination:
+      first: "第一頁"
+      previous: "上一頁"
+      next: "下一頁"
+      last: "最尾頁"
+      truncate: "..."
 
   # グローバルな感じのエラーはerrorsを起点にする。
   errors:
