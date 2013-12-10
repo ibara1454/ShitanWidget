@@ -23,7 +23,7 @@ class SearchMissive::MissiveFilter
   # 名前空間を使用
   include SearchMissive
   # プロパティの定義
-  attr_reader :date_begin, :date_end, :doc_type, :agency, :reference_no, :subject
+  attr_reader :date_begin, :date_end, :doc_type, :agency, :initial, :reference_no, :subject
   # 保存済みかどうかチェックする
   def persisted?; false; end
 
@@ -35,9 +35,10 @@ class SearchMissive::MissiveFilter
     # 条件要素がバラバラで同一性がないため、各条件別処理
     @conditions << AcceptDate.arel_table[:date].in(DateRangeParser.new.parse(@date_begin, @date_end)) if @date_begin.present? or @date_end.present?
     @conditions << DocType.arel_table[:id].eq(@doc_type) if @doc_type.present?
-    @conditions << Agency.arel_table[:name].matches(@agency) if @agency.present?
+    @conditions << Agency.arel_table[:name].matches("%#{@agency}%") if @agency.present?
+    @conditions << Initial.arel_table[:name].matches("%#{@initial}%") if @initial.present?
     @conditions << Missive.arel_table[:reference_no].eq(@reference_no) if @reference_no.present?
-    @conditions << Missive.arel_table[:subject].matches(@subject) if @subject.present?
+    @conditions << Missive.arel_table[:subject].matches("%#{@subject}%") if @subject.present?
   end
 
   def filter_out

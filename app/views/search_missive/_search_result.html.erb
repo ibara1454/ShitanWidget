@@ -22,6 +22,7 @@
         <td><%= entity.reference_no %></td>
         <td>
             <span rel="tooltip" title="<%= entity.subject %>"><%= truncate entity.subject %></span>
+            <%= link_to t(".detail"), {:action => :show, :id => entity}, :class => "pull-right" %>
         </td>
     </tr>
     <% end %>

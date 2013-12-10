@@ -11,7 +11,7 @@ zh-TW:
         accept_date: "收文日期"
         doc_type: "種類"
         agency: "發文單位"
-        initial: "字"
+        initial: "字號"
         reference_no: "文號"
         subject: "主旨"
         document: "公文"
@@ -29,7 +29,7 @@ zh-TW:
         agency: "發文單位"
         accept_date: "收文日期"
         doc_type: "文件種類"
-        initial: "字"
+        initial: "字號"
         reference_no: "文號"
         subject: "主旨"
 
@@ -52,8 +52,9 @@ zh-TW:
         end: "止"
       fuzzy_match: "模糊比對"
 
-    ajax_result:
+    search_result:
       count_title: "此次搜尋共有%{count}筆資料"
+      detail: "詳細資料"
 
 # kaminari用
   views:
