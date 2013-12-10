@@ -12,7 +12,8 @@ class SearchMissiveController < ApplicationController
   end
 
   def show
-    @missive = SearchMissive::Missive.where(params[:id])
+    @missive = SearchMissive::Missive.find(params[:id])
+    render(:layout => false) if request.xml_http_request?
   end
 
 end

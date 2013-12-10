@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
-//= require bootbox.min
 //= require_tree .

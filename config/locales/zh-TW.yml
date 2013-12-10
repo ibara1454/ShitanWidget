@@ -3,22 +3,22 @@
 
 zh-TW:
   # モデルは全て activerecord 以下に記述する。
-  activerecord:
-    models:
-      search_missive/missive: "公文"
-    attributes:
-      search_missive/missive:
-        accept_date: "收文日期"
-        doc_type: "種類"
-        agency: "發文單位"
-        initial: "字號"
-        reference_no: "文號"
-        subject: "主旨"
-        document: "公文"
-        attachment: "附件"
-    errors:
-      models:
-        missive:
+  # activerecord:
+  #   models:
+  #     search_missive/missive: "公文"
+  #   attributes:
+  #     search_missive/missive:
+  #       accept_date: "收文日期"
+  #       doc_type: "種類"
+  #       agency: "發文單位"
+  #       initial: "字號"
+  #       reference_no: "文號"
+  #       subject: "主旨"
+  #       document: "公文"
+  #       attachment: "附件"
+  #   errors:
+  #     models:
+  #       missive:
 
   activemodel:
     models:
@@ -55,6 +55,16 @@ zh-TW:
     search_result:
       count_title: "此次搜尋共有%{count}筆資料"
       detail: "詳細資料"
+
+    popup_missive:
+      accept_date: "收文日期"
+      doc_type: "種類"
+      agency: "發文單位"
+      initial: "字號"
+      reference_no: "文號"
+      subject: "主旨"
+      document: "公文"
+      attachment: "附件"
 
 # kaminari用
   views:

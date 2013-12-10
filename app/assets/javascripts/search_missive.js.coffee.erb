@@ -11,3 +11,19 @@ $ ->
     language: "<%= I18n.locale.to_s %>",
     autoclose: true,
     todayHighlight: true
+
+  #live binding
+  $(document).on 'click', "tbody a", (e) ->
+    e.preventDefault()
+    popup = $('#missiveModal')
+    # href = $(this).attr('href')
+    # $.ajax
+    #   url: href
+    #   beforeSend: ->
+    #     popup.modal('show')
+    #   success: ->
+
+    popup.modal('show')
+    popup.find('.modal-body').load $(this).attr('href')
+    # falseを返し、ページを遷移させない
+    false
