@@ -11,4 +11,8 @@ class SearchMissiveController < ApplicationController
     @result = @missive_filter.filter_out.page(params[:page])
   end
 
+  def show
+    @missive = SearchMissive::Missive.where(params[:id])
+  end
+
 end
