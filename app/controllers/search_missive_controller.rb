@@ -8,7 +8,7 @@ class SearchMissiveController < ApplicationController
   def search
     conditions = params[:search_missive_missive_filter]
     @missive_filter = SearchMissive::MissiveFilter.new(conditions)
-    @result = @missive_filter.filter_out.page(params[:page])
+    @result = @missive_filter.filter_out.order(SearchMissive::AcceptDate.arel_table[:date]).page(params[:page])
   end
 
   def show
