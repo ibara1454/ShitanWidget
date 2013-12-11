@@ -56,16 +56,6 @@ zh-TW:
       count_title: "此次搜尋共有%{count}筆資料"
       detail: "詳細表示"
 
-    popup_missive:
-      accept_date: "收文日期"
-      doc_type: "種類"
-      agency: "發文單位"
-      initial: "字號"
-      reference_no: "文號"
-      subject: "主旨"
-      document: "公文"
-      attachment: "附件"
-
 # kaminari用
   views:
     pagination:
@@ -77,3 +67,13 @@ zh-TW:
 
   # グローバルな感じのエラーはerrorsを起点にする。
   errors:
+
+  #
+  accept_date: "收文日期"
+  doc_type: "種類"
+  agency: "發文單位"
+  initial: "字號"
+  reference_no: "文號"
+  subject: "主旨"
+  document: "公文"
+  attachment: "附件"
