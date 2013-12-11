@@ -37,13 +37,13 @@ class SearchMissive::MissiveFilter
     @conditions << DocType.arel_table[:id].eq(@doc_type) if @doc_type.present?
     @conditions << Agency.arel_table[:name].matches("%#{@agency}%") if @agency.present?
     @conditions << Initial.arel_table[:name].matches("%#{@initial}%") if @initial.present?
-    @conditions << Missive.arel_table[:reference_no].eq(@reference_no) if @reference_no.present?
+    @conditions << Missive.arel_table[:reference_no].matches("%#{@reference_no}%") if @reference_no.present?
     @conditions << Missive.arel_table[:subject].matches("%#{@subject}%") if @subject.present?
   end
 
   def filter_out
     # 先読みさせ
-    result = Missive.includes(:accept_date, :doc_type, :agency, :initial, :document => :mime, :attachments => :mime)
+    result = Missive
     @conditions.each { |c| result = result.where(c) }
     return result
   end

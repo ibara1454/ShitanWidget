@@ -1,5 +1,7 @@
 class SearchMissiveController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :args_error
+
   def index
     @missive_filter = SearchMissive::MissiveFilter.new
     @doc_type = SearchMissive::DocType.all
@@ -26,6 +28,9 @@ class SearchMissiveController < ApplicationController
       raise ActionController::RoutingError.new('404 Not Found')
     end
     file_path = Rails.root.join('tmp/files/attach', file.path)
-    send_file(file_path)
+    send_file(file_path, :type => file.mime.name)
+  end
+
+  def args_error
   end
 end

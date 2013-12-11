@@ -1,6 +1,8 @@
 class SearchMissive::Missive < ActiveRecord::Base
   # kaminariのpagination設定
   paginates_per 20
+
+  default_scope includes(:accept_date, :doc_type, :agency, :initial, :document => :mime, :attachments => :mime)
   # attr_accessible :title, :body
   attr_accessible :accept_date, :doc_type, :agency, :initial, :reference_no, :subject, :document
 
