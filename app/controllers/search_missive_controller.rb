@@ -1,6 +1,6 @@
 class SearchMissiveController < ApplicationController
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :args_error
+  # rescue_from ActiveRecord::RecordNotFound, :with => :args_error
 
   def index
     @missive_filter = SearchMissive::MissiveFilter.new
@@ -31,6 +31,7 @@ class SearchMissiveController < ApplicationController
     send_file(file_path, :type => file.mime.name)
   end
 
-  def args_error
-  end
+  # def args_error
+  #   redirect_to 'index'
+  # end
 end
