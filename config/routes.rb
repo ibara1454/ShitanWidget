@@ -57,5 +57,11 @@ ShitanWidgets::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
+  # match ':controller(/:action(/:id))(.:format)'
+
+  match 'search_missive' => 'search_missive#index'
+  match 'search_missive/index'
+  match 'search_missive/search'
+  match 'search_missive/show(/:id)'=> 'search_missive#show'
+  match '*a', :to => 'error#notfound'
 end

@@ -13,7 +13,7 @@ $ ->
     todayHighlight: true
 
   #live binding
-  $(document).on 'click', "#result a", (e) ->
+  $(document).on 'click', "#result table a", (e) ->
     e.preventDefault()
     popup = $('#missiveModal')
     href = $(this).attr('href')

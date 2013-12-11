@@ -1,5 +1,7 @@
 class SearchMissiveController < ApplicationController
 
+
+
   def index
     @missive_filter = SearchMissive::MissiveFilter.new
     @doc_type = SearchMissive::DocType.all
@@ -18,7 +20,12 @@ class SearchMissiveController < ApplicationController
 
   def download
     file_path = Rails.root.join('tmp/files/attach', params[:path])
-    send_file(file_path, :disposition => 'attachment')
+    send_file(file_path)
+  end
+
+  # routing not foundの時の対策
+  def notfound
+    render :file => Rails.root.join('public', '404.html')
   end
 
 end
