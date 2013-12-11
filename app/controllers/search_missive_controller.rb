@@ -16,4 +16,9 @@ class SearchMissiveController < ApplicationController
     render(:layout => false) if request.xml_http_request?
   end
 
+  def download
+    file_path = Rails.root.join('tmp/files/attach', params[:path])
+    send_file(file_path, :disposition => 'attachment')
+  end
+
 end

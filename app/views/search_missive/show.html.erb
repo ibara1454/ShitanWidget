@@ -1,0 +1,38 @@
+<table class="table">
+    <tbody>
+        <tr>
+            <th><%= t(".accept_date") %></th>
+            <td colspan="3"><%= @missive.accept_date.date %></td>
+        </tr>
+        <tr>
+            <th><%= t(".doc_type") %></th>
+            <td colspan="3"><%= @missive.doc_type.name %></td>
+        </tr>
+        <tr>
+            <th><%= t(".agency") %></th>
+            <td colspan="3"><%= @missive.agency.name %></td>
+        </tr>
+        <tr>
+            <th><%= t(".initial") %></th>
+            <td><%= @missive.initial.name %></td>
+            <th><%= t(".reference_no") %></th>
+            <td><%= @missive.reference_no %></td>
+        </tr>
+        <tr>
+            <th><%= t(".subject") %></th>
+            <td colspan="3"><%= @missive.subject %></td>
+        </tr>
+        <tr>
+            <th><%= t(".document") %></th>
+            <td colspan="3"><%= link_to @missive.document.path, {:action => 'download', :path => @missive.document.path, :method => :post} %></td>
+        </tr>
+        <tr>
+            <th><%= t(".attachment") %></th>
+            <td colspan="3">
+            <% @missive.attachments.each do |attach| %>
+                <%= link_to attach.path, {:action => 'download', :path => attach.path, :method => :post} %>
+             <% end %>
+            </td>
+        </tr>
+    </tbody>
+</table>

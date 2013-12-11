@@ -54,7 +54,7 @@ zh-TW:
 
     search_result:
       count_title: "此次搜尋共有%{count}筆資料"
-      detail: "詳細資料"
+      detail: "詳細表示"
 
     popup_missive:
       accept_date: "收文日期"

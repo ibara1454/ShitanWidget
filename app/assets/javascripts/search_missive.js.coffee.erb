@@ -13,17 +13,18 @@ $ ->
     todayHighlight: true
 
   #live binding
-  $(document).on 'click', "tbody a", (e) ->
+  $(document).on 'click', "#result a", (e) ->
     e.preventDefault()
     popup = $('#missiveModal')
-    # href = $(this).attr('href')
-    # $.ajax
-    #   url: href
-    #   beforeSend: ->
-    #     popup.modal('show')
-    #   success: ->
+    href = $(this).attr('href')
+    $.ajax
+      url: href
+      beforeSend: ->
+        popup.modal('show')
+      success: (data, dataType)->
+        popup.find('.modal-body').html data
 
-    popup.modal('show')
-    popup.find('.modal-body').load $(this).attr('href')
+    # popup.modal('show')
+    # popup.find('.modal-body').load $(this).attr('href')
     # falseを返し、ページを遷移させない
     false
