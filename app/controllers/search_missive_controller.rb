@@ -1,7 +1,5 @@
 class SearchMissiveController < ApplicationController
 
-
-
   def index
     @missive_filter = SearchMissive::MissiveFilter.new
     @doc_type = SearchMissive::DocType.all
@@ -14,18 +12,20 @@ class SearchMissiveController < ApplicationController
   end
 
   def show
-    @missive = SearchMissive::Missive.find(params[:id])
+    @missive = SearchMissive::Missive.includes(:accept_date, :doc_type, :agency, :initial, :document, :attachments).find(params[:id])
     render(:layout => false) if request.xml_http_request?
   end
 
   def download
-    file_path = Rails.root.join('tmp/files/attach', params[:path])
+    file = case params[:type]
+    when 'document'
+      SearchMissive::Document.find(params[:id])
+    when 'attachment'
+      SearchMissive::Attachment.find(params[:id])
+    else
+      raise ActionController::RoutingError.new('404 Not Found')
+    end
+    file_path = Rails.root.join('tmp/files/attach', file.path)
     send_file(file_path)
   end
-
-  # routing not foundの時の対策
-  def notfound
-    render :file => Rails.root.join('public', '404.html')
-  end
-
 end

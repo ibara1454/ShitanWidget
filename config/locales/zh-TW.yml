@@ -45,6 +45,10 @@ zh-TW:
 # ビューはモデル名の複数形を起点にし、ビュー名毎に記述する。
 # 対応するビューの中ではツリーを省略できる。<%= t '.title' %>
   search_missive:
+    index:
+      detail: "詳細表示"
+      close: "關閉"
+
     form_search:
       title: "公文搜尋"
       date:

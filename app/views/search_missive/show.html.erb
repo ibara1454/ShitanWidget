@@ -24,14 +24,14 @@
         </tr>
         <tr>
             <th class="span2"><%= t("document") %></th>
-            <td colspan="3"><%= link_to @missive.document.path, {:action => 'download', :path => @missive.document.path, :method => :post} %></td>
+            <td colspan="3"><%= link_to @missive.document.path, {:action => 'download', :type => 'document', :id => @missive.document} %></td>
         </tr>
         <tr>
             <th class="span2"><%= t("attachment") %></th>
             <td colspan="3">
             <% @missive.attachments.each do |attach| %>
-                <%= link_to attach.path, {:action => 'download', :path => attach.path, :method => :post} %>
-             <% end %>
+                <%= link_to attach.path, {:action => 'download', :type => 'attachment', :id => attach} %>
+            <% end %>
             </td>
         </tr>
     </tbody>

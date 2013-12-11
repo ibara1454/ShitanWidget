@@ -62,6 +62,7 @@ ShitanWidgets::Application.routes.draw do
   match 'search_missive' => 'search_missive#index'
   match 'search_missive/index'
   match 'search_missive/search'
-  match 'search_missive/show(/:id)'=> 'search_missive#show'
+  match 'search_missive/show/:id'=> 'search_missive#show'
+  match 'search_missive/download/:type/:id' => 'search_missive#download'
   match '*a', :to => 'error#notfound'
 end
