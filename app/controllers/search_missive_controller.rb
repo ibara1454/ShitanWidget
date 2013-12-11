@@ -32,5 +32,6 @@ class SearchMissiveController < ApplicationController
   end
 
   def args_error
+    redirect_to 'index'
   end
 end
