@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201184352) do
+ActiveRecord::Schema.define(:version => 20131212150310) do
 
   create_table "search_missive_accept_dates", :force => true do |t|
     t.date     "date",       :null => false
@@ -19,11 +19,16 @@ ActiveRecord::Schema.define(:version => 20131201184352) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "search_missive_accept_dates", ["date"], :name => "index_search_missive_accept_dates_on_date"
+  add_index "search_missive_accept_dates", ["id"], :name => "index_search_missive_accept_dates_on_id"
+
   create_table "search_missive_agencies", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "search_missive_agencies", ["id"], :name => "index_search_missive_agencies_on_id"
 
   create_table "search_missive_attachments", :force => true do |t|
     t.string   "path",       :null => false
@@ -32,6 +37,9 @@ ActiveRecord::Schema.define(:version => 20131201184352) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "search_missive_attachments", ["id"], :name => "index_search_missive_attachments_on_id"
+  add_index "search_missive_attachments", ["missive_id"], :name => "index_search_missive_attachments_on_missive_id"
 
   create_table "search_missive_doc_types", :force => true do |t|
     t.string   "name",       :null => false
@@ -46,11 +54,15 @@ ActiveRecord::Schema.define(:version => 20131201184352) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "search_missive_documents", ["id"], :name => "index_search_missive_documents_on_id"
+
   create_table "search_missive_initials", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "search_missive_initials", ["id"], :name => "index_search_missive_initials_on_id"
 
   create_table "search_missive_mimes", :force => true do |t|
     t.string   "name",       :null => false
@@ -69,5 +81,11 @@ ActiveRecord::Schema.define(:version => 20131201184352) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "search_missive_missives", ["accept_date_id"], :name => "index_search_missive_missives_on_accept_date_id"
+  add_index "search_missive_missives", ["agency_id"], :name => "index_search_missive_missives_on_agency_id"
+  add_index "search_missive_missives", ["document_id"], :name => "index_search_missive_missives_on_document_id"
+  add_index "search_missive_missives", ["id"], :name => "index_search_missive_missives_on_id"
+  add_index "search_missive_missives", ["initial_id"], :name => "index_search_missive_missives_on_initial_id"
 
 end
