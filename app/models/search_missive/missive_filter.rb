@@ -2,9 +2,12 @@
 class DateRangeParser
   def parse(date_begin, date_end)
     # 無限の過去
-    date_begin = Date.new('1752-9-14') if date_begin.empty?
+    date_begin = '1752-9-14' if date_begin.blank?
     # 無限の未来
-    date_end = Date.new('9999-12-31') if date_end.empty?
+    date_end = '9999-12-31' if date_end.blank?
+
+    date_begin = Date.parse(date_begin)
+    date_end = Date.parse(date_end)
     # 時間のrangeオブジェクトを作成
     return Range.new(date_begin, date_end)
   end
