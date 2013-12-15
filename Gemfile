@@ -19,11 +19,12 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'execjs'
-  gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
+gem 'pjax-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'mime-types'
 
