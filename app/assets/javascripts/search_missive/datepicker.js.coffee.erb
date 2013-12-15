@@ -1,0 +1,8 @@
+$ ->
+  # active bootstrap-datepicker
+  $('input.datepicker').datepicker
+    format: "yyyy-mm-dd",
+    # 動的にI18n.localeを決める
+    language: "<%= I18n.locale.to_s %>",
+    autoclose: true,
+    todayHighlight: true

@@ -11,6 +11,7 @@ class SearchMissiveController < ApplicationController
     conditions = params[:search_missive_missive_filter]
     @missive_filter = SearchMissive::MissiveFilter.new(conditions)
     @result = @missive_filter.filter_out.order(SearchMissive::AcceptDate.arel_table[:date]).page(params[:page])
+    render :layout => false if request.xml_http_request?
   end
 
   def show

@@ -1,1 +1,0 @@
-(function(){jQuery(function(){return $("a[rel~=popover], .has-popover").popover(),$("[rel=tooltip]").tooltip()})}).call(this);
