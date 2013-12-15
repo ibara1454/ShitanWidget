@@ -1,4 +1,4 @@
-<%= form_for @missive_filter, :url => {:action => "search"}, :html => {:class => "well form-horizontal", :role => "form", :data => {:pjax => ''}}, :builder => BootstrapFormBulder, :method => 'GET' do |f| %>
+<%= form_for @missive_filter, :url => {:action => "search"}, :html => {:class => "well form-horizontal", :role => "form"}, :builder => BootstrapFormBulder, :method => 'GET' do |f| %>
     <%= field_set_tag t(".title") do %>
         <div class="form-group">
             <%= f.label :date %>
