@@ -4,3 +4,4 @@ $(document).on 'submit', 'form', (event) ->
 $(document).on 'click', ".pagination a[href!='#']", (event) ->
   $.pjax.click event,
     container: $('#result')
+    scrollTo: $(window).scrollTop() # デフォルトではpjaxを実行するとスクロールがトップに移動してしまうので、値を設定して現状維持
