@@ -3,14 +3,16 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #
 
-# active bootstrap-datepicker
 $ ->
+  # active bootstrap-datepicker
   $('input.datepicker').datepicker
     format: "yyyy-mm-dd",
     # 動的にI18n.localeを決める
     language: "<%= I18n.locale.to_s %>",
     autoclose: true,
     todayHighlight: true
+
+
 
   #live binding
   $(document).on 'click', "#result table a", (e) ->
