@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require pjax/jquery_pjax
+//= require jquery.pjax
 //= require twitter/bootstrap
 //= require bootstrap

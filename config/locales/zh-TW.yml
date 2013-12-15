@@ -49,16 +49,16 @@ zh-TW:
       detail: "詳細表示"
       close: "關閉"
 
+    search:
+      count_title: "此次搜尋共有%{count}筆資料"
+      detail: "詳細表示"
+
     form_search:
       title: "公文搜尋"
       date:
         begin: "起"
         end: "止"
       fuzzy_match: "模糊比對"
-
-    search_result:
-      count_title: "此次搜尋共有%{count}筆資料"
-      detail: "詳細表示"
 
 # kaminari用
   views:
