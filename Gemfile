@@ -23,7 +23,6 @@ end
 
 gem 'jquery-rails'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 
 gem 'mime-types'
 
