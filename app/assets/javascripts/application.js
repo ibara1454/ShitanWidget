@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require jquery.pjax
 //= require twitter/bootstrap
-//= require bootstrap
