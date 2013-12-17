@@ -1,14 +1,14 @@
 <%= t(".count_title", :count => @result.total_count) %>
 
-<table class="table table-striped table-bordered">
+<table class="table table-hover">
     <thead>
         <tr>
-            <th class="span1"><%= t("accept_date") %></th>
-            <th class="span1"><%= t("doc_type") %></th>
-            <th class="span2"><%= t("agency") %></th>
-            <th class="span1"><%= t("initial") %></th>
-            <th class="span1"><%= t("reference_no") %></th>
-            <th class="span4"><%= t("subject") %></th>
+            <th class="col-lg-1"><%= t("accept_date") %></th>
+            <th class="col-lg-1"><%= t("doc_type") %></th>
+            <th class="col-lg-2"><%= t("agency") %></th>
+            <th class="col-lg-2"><%= t("initial") %></th>
+            <th class="col-lg-1"><%= t("reference_no") %></th>
+            <th class="col-lg-5"><%= t("subject") %></th>
         </tr>
     </thead>
     <% @result.each do |entity| %>
@@ -16,12 +16,12 @@
         <td><%= entity.accept_date.date %></td>
         <td><%= entity.doc_type.name %></td>
         <td>
-            <span rel="tooltip" title="<%= entity.agency.name %>"><%= truncate entity.agency.name, :length => 15 %></span>
+            <span rel="tooltip" title="<%= entity.agency.name %>"><%= truncate entity.agency.name, :length => 13 %></span>
         </td>
         <td><%= entity.initial.name %></td>
         <td><%= entity.reference_no %></td>
         <td>
-            <span rel="tooltip" title="<%= entity.subject %>"><%= truncate entity.subject %></span>
+            <span rel="tooltip" title="<%= entity.subject %>"><%= truncate entity.subject, :length => 25 %></span>
             <%= link_to t(".detail"), {:action => :show, :id => entity}, :class => "pull-right" %>
         </td>
     </tr>

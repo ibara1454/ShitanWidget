@@ -22,8 +22,13 @@ module SearchMissiveHelper
 end
 
 class BootstrapFormBulder < ActionView::Helpers::FormBuilder
-  def datepicker(method, options = {}, html_options = {})
-    @template.text_field(@object_name, method, {:class => "datepicker", :type => "text", :placeholder => "yyyy-mm-dd"})
+  def datepicker(method, options = {})
+    classes = options[:class] ? options[:class].split(" ") : []
+    classes << "datepicker" unless classes.index("datepicker")
+    options[:class] = classes.join(' ')
+    options[:type] = "text"
+    options[:placeholder] = "yyyy-mm-dd"
+    @template.text_field(@object_name, method, options)
   end
 
   def submit(*args)
